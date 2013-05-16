@@ -1,0 +1,29 @@
+  PImage img;
+  float x;
+  float y;
+  float targetX;
+  float targetY;
+  float distX;
+  float distY;
+  float easing = .01;
+  
+  void setup(){
+   size(500,500); 
+   img = loadImage("beaker.jpg");
+   x = width/2;
+   y = height/2;
+  }
+  
+  void draw(){
+   background(0);
+   image(img, x, y, 100, 100);
+  targetX=mouseX;
+  targetY=mouseY;
+  distX=targetX-x;
+  distY=targetY-y;
+  x+=distX*easing;
+  y+=distY*easing;
+  fill(50,150,255);
+  //ellipse(x,y,50,50);
+  //ellipse(x+100,y+100,25,25);
+  }
